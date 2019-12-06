@@ -6,19 +6,7 @@ enable_testing()
 SET(CMAKE_CXX_STANDARD 17)
 SET(CMAKE_CXX_STANDARD_REQUIRED true)
 
-find_package(Boost)
-if (Boost_FOUND)
-    include_directories(${Boost_INCLUDE_DIRS})
-    
-    add_executable(computor_test
-        complex_test.cpp
-        complex.cpp
-        complex.hpp
-        main.cpp
-        number_test.cpp
-        number.cpp
-        number.hpp
-    )
+SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
-    add_test(NAME computor_test COMMAND computor_test)
-endif()
+add_subdirectory(src)
+add_subdirectory(test)
