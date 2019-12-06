@@ -10,11 +10,15 @@ find_package(Boost)
 if (Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
     
-    add_executable(complex_test
+    add_executable(computor_test
         complex_test.cpp
         complex.cpp
         complex.hpp
+        main.cpp
+        number_test.cpp
+        number.cpp
+        number.hpp
     )
 
-    add_test(NAME complex_test COMMAND complex_test)
+    add_test(NAME computor_test COMMAND computor_test)
 endif()
